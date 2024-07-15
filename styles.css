@@ -1,0 +1,156 @@
+@charset "UTF-8";
+/* ----------------------------------------- Section des variables ----------------------------------------- */
+/*************************** Set de couleurs préconfigurées ****************************/
+/* --------------------------------------- Règles CSS --------------------------------------- */
+section[data-block=newsslider] {
+  background: #fff;
+}
+section[data-block=newsslider] .card-body {
+  padding: 0 !important;
+}
+section[data-block=newsslider] .card-body h3.card-title, section[data-block=newsslider] .card-body h5.card-title {
+  display: none !important;
+}
+section[data-block=newsslider] .card-body .card-text {
+  overflow: visible !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section[data-block=newsslider] .card-body .card-text #newsLabelContent {
+  display: flex;
+}
+section[data-block=newsslider] .card-body .card-text #newsLabelContent .actualitesIcon {
+  position: relative;
+  background-color: #28a94d;
+  padding: 10px 15px 10px 15px;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  color: rgb(255, 255, 255) !important;
+  margin-left: 20px;
+  max-width: 50%;
+}
+section[data-block=newsslider] .card-body .card-text #newsLabelContent #newsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 80%;
+}
+section[data-block=newsslider] .card-body .card-text #newsLabelContent #newsList #actualitesList {
+  display: flex;
+  list-style-type: none;
+  position: absolute;
+  min-width: 80%;
+  align-items: center;
+  margin: 0;
+}
+section[data-block=newsslider] .card-body .card-text #newsLabelContent #newsList #actualitesList .actualitesListItem {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+}
+section[data-block=newsslider] .card-body .card-text #newsLabelContent #newsList #actualitesList .actualitesListItem.glideAppear {
+  opacity: 0;
+  visibility: hidden;
+  left: 60px;
+  animation: newsglideRtoLApp 0.25s;
+  animation-fill-mode: forwards;
+}
+section[data-block=newsslider] .card-body .card-text #newsLabelContent #newsList #actualitesList .actualitesListItem.glideDisappear {
+  opacity: 1;
+  visibility: visible;
+  left: 30px;
+  animation: newsglideRtoLDis 0.25s;
+  animation-fill-mode: forwards;
+}
+section[data-block=newsslider] .card-body .card-text #newsLabelContent #newsList #actualitesList .actualitesListItem:hover {
+  text-decoration: underline;
+}
+section[data-block=newsslider] .card-body .card-text #newsLabelContent #newsList #actualitesList .actualitesListItem .actualitesCategories {
+  font-size: 110%;
+  color: #28a94d;
+}
+section[data-block=newsslider] .card-body .card-text #newsLabelContent #newsList #actualitesList .actualitesListItem a {
+  text-decoration: none;
+  font-size: 100%;
+  color: rgb(33, 37, 41) !important;
+}
+section[data-block=newsslider] .card-body .card-text #dotContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 18px;
+}
+section[data-block=newsslider] .card-body .card-text #dotContainer .dots {
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px 0 5px;
+  transition: all 0.25s ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+}
+section[data-block=newsslider] .card-body .card-text #dotContainer .dots.grey {
+  background-color: #a9a9a9;
+  opacity: 80%;
+}
+section[data-block=newsslider] .card-body .card-text #dotContainer .dots.grey:hover {
+  background-color: #a9a9a9;
+  opacity: 100%;
+  cursor: pointer;
+}
+section[data-block=newsslider] .card-body .card-text #dotContainer .dots.green {
+  background-color: #28a94d;
+  opacity: 80%;
+}
+section[data-block=newsslider] .card-body .card-text #dotContainer .dots.green:hover {
+  background-color: #28a94d;
+  opacity: 100%;
+  cursor: pointer;
+}
+section[data-block=newsslider] .card-body .card-text #dotContainer .dots.lrg {
+  height: 12px;
+  width: 12px;
+}
+section[data-block=newsslider] .card-body .card-text #dotContainer .dots.sml {
+  height: 8px;
+  width: 8px;
+}
+
+@keyframes newsglideRtoLApp {
+  to {
+    opacity: 1;
+    visibility: visible;
+    left: 30px;
+  }
+}
+@keyframes newsglideRtoLDis {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    left: 60px;
+  }
+}
+.mandatoryfields {
+  color: #e54f6b;
+  font-style: italic;
+}
+
+.formsettingheading p {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  margin-top: 10px !important;
+}
+
+.form-item.row {
+  margin: 5px !important;
+}
+
+.form-control[name^=s_block_newsslider_newstitle],
+.form-control[name^=s_block_newsslider_newscontent],
+.form-control[name^=s_block_newsslider_newsurl] {
+  width: 100% !important;
+}/*# sourceMappingURL=styles.css.map */
