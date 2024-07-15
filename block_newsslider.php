@@ -86,6 +86,7 @@ class block_newsslider extends block_base {
                     format_text(get_config('block_newsslider', 'newstitle0'.$i), FORMAT_HTML, ['noclean' => false, 'filter' => true]),
                     format_text(get_config('block_newsslider', 'newscontent0'.$i), FORMAT_HTML, ['noclean' => false, 'filter' => true]),
                     get_config('block_newsslider', 'newsurl0'.$i),
+                    get_config('block_newsslider', 'newstarget0'.$i),
                 );
                 array_push($newsitems, $news);
             }

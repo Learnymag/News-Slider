@@ -85,7 +85,7 @@ if ($hassiteconfig) {
             new admin_setting_configtext(
                 'block_newsslider/newstitle01',
                 get_string('newstitle', 'block_newsslider') . " 1" . get_string('mandatoryfields', 'block_newsslider'),
-                get_string('newstitledesc', 'block_newsslider') . " 1",
+                get_string('newstitledesc', 'block_newsslider') . " 1.",
                 get_string('newstitledefault', 'block_newsslider'),
             )
         );
@@ -94,7 +94,7 @@ if ($hassiteconfig) {
             new admin_setting_configtextarea(
                 'block_newsslider/newscontent01',
                 get_string('newscontent', 'block_newsslider') . " 1" . get_string('mandatoryfields', 'block_newsslider'),
-                get_string('newscontentdesc', 'block_newsslider') . " 1",
+                get_string('newscontentdesc', 'block_newsslider') . " 1.",
                 get_string('newscontentdefault', 'block_newsslider'),
             )
         );
@@ -103,8 +103,19 @@ if ($hassiteconfig) {
             new admin_setting_configtext(
                 'block_newsslider/newsurl01',
                 get_string('newsurl', 'block_newsslider') . " 1",
-                get_string('newsurldesc', 'block_newsslider') . " 1",
+                get_string('newsurldesc', 'block_newsslider') . " 1.",
                 get_string('newsurldefault', 'block_newsslider'),
+            )
+        );
+        
+        $settings->add(
+            new admin_setting_configcheckbox(
+                'block_newsslider/newstarget01',
+                get_string('newstarget', 'block_newsslider') . " 1",
+                get_string('newstargetdesc', 'block_newsslider') . " 1?",
+                "_blank",
+                $yes = '_blank',
+ 	            $no = '_self' 
             )
         );
 
@@ -123,7 +134,7 @@ if ($hassiteconfig) {
             new admin_setting_configtext(
                 'block_newsslider/newstitle02',
                 get_string('newstitle', 'block_newsslider') . " 2",
-                get_string('newstitledesc', 'block_newsslider') . " 2",
+                get_string('newstitledesc', 'block_newsslider') . " 2.",
                 '',
             )
         );
@@ -132,7 +143,7 @@ if ($hassiteconfig) {
             new admin_setting_configtextarea(
                 'block_newsslider/newscontent02',
                 get_string('newscontent', 'block_newsslider') . " 2",
-                get_string('newscontentdesc', 'block_newsslider') . " 2",
+                get_string('newscontentdesc', 'block_newsslider') . " 2.",
                 '',
             )
         );
@@ -141,8 +152,19 @@ if ($hassiteconfig) {
             new admin_setting_configtext(
                 'block_newsslider/newsurl02',
                 get_string('newsurl', 'block_newsslider') . " 2",
-                get_string('newsurldesc', 'block_newsslider') . " 2",
+                get_string('newsurldesc', 'block_newsslider') . " 2.",
                 'https://www.ymag.fr/',
+            )
+        );
+
+        $settings->add(
+            new admin_setting_configcheckbox(
+                'block_newsslider/newstarget02',
+                get_string('newstarget', 'block_newsslider') . " 2",
+                get_string('newstargetdesc', 'block_newsslider') . " 2?",
+                "_blank",
+                $yes = '_blank',
+ 	            $no = '_self' 
             )
         );
 
@@ -161,7 +183,7 @@ if ($hassiteconfig) {
             new admin_setting_configtext(
                 'block_newsslider/newstitle03',
                 get_string('newstitle', 'block_newsslider') . " 3",
-                get_string('newstitledesc', 'block_newsslider') . " 3",
+                get_string('newstitledesc', 'block_newsslider') . " 3.",
                 '',
             )
         );
@@ -170,7 +192,7 @@ if ($hassiteconfig) {
             new admin_setting_configtextarea(
                 'block_newsslider/newscontent03',
                 get_string('newscontent', 'block_newsslider') . " 3",
-                get_string('newscontentdesc', 'block_newsslider') . " 3",
+                get_string('newscontentdesc', 'block_newsslider') . " 3.",
                 '',
             )
         );
@@ -179,8 +201,19 @@ if ($hassiteconfig) {
             new admin_setting_configtext(
                 'block_newsslider/newsurl03',
                 get_string('newsurl', 'block_newsslider') . " 3",
-                get_string('newsurldesc', 'block_newsslider') . " 3",
+                get_string('newsurldesc', 'block_newsslider') . " 3.",
                 'https://www.ymag.fr/',
+            )
+        );
+
+        $settings->add(
+            new admin_setting_configcheckbox(
+                'block_newsslider/newstarget03',
+                get_string('newstarget', 'block_newsslider') . " 3",
+                get_string('newstargetdesc', 'block_newsslider') . " 3?",
+                "_blank",
+                $yes = '_blank',
+ 	            $no = '_self' 
             )
         );
 
@@ -199,7 +232,7 @@ if ($hassiteconfig) {
             new admin_setting_configtext(
                 'block_newsslider/newstitle04',
                 get_string('newstitle', 'block_newsslider') . " 4",
-                get_string('newstitledesc', 'block_newsslider') . " 4",
+                get_string('newstitledesc', 'block_newsslider') . " 4.",
                 '',
             )
         );
@@ -208,7 +241,7 @@ if ($hassiteconfig) {
             new admin_setting_configtextarea(
                 'block_newsslider/newscontent04',
                 get_string('newscontent', 'block_newsslider') . " 4",
-                get_string('newscontentdesc', 'block_newsslider') . " 4",
+                get_string('newscontentdesc', 'block_newsslider') . " 4.",
                 '',
             )
         );
@@ -217,8 +250,19 @@ if ($hassiteconfig) {
             new admin_setting_configtext(
                 'block_newsslider/newsurl04',
                 get_string('newsurl', 'block_newsslider') . " 4",
-                get_string('newsurldesc', 'block_newsslider') . " 4",
+                get_string('newsurldesc', 'block_newsslider') . " 4.",
                 'https://www.ymag.fr/',
+            )
+        );
+
+        $settings->add(
+            new admin_setting_configcheckbox(
+                'block_newsslider/newstarget04',
+                get_string('newstarget', 'block_newsslider') . " 4",
+                get_string('newstargetdesc', 'block_newsslider') . " 4?",
+                "_blank",
+                $yes = '_blank',
+ 	            $no = '_self' 
             )
         );
 
@@ -237,7 +281,7 @@ if ($hassiteconfig) {
             new admin_setting_configtext(
                 'block_newsslider/newstitle05',
                 get_string('newstitle', 'block_newsslider') . " 5",
-                get_string('newstitledesc', 'block_newsslider') . " 5",
+                get_string('newstitledesc', 'block_newsslider') . " 5.",
                 '',
             )
         );
@@ -246,7 +290,7 @@ if ($hassiteconfig) {
             new admin_setting_configtextarea(
                 'block_newsslider/newscontent05',
                 get_string('newscontent', 'block_newsslider') . " 5",
-                get_string('newscontentdesc', 'block_newsslider') . " 5",
+                get_string('newscontentdesc', 'block_newsslider') . " 5.",
                 '',
             )
         );
@@ -255,8 +299,19 @@ if ($hassiteconfig) {
             new admin_setting_configtext(
                 'block_newsslider/newsurl05',
                 get_string('newsurl', 'block_newsslider') . " 5",
-                get_string('newsurldesc', 'block_newsslider') . " 5",
+                get_string('newsurldesc', 'block_newsslider') . " 5.",
                 'https://www.ymag.fr/',
+            )
+        );
+
+        $settings->add(
+            new admin_setting_configcheckbox(
+                'block_newsslider/newstarget05',
+                get_string('newstarget', 'block_newsslider') . " 5",
+                get_string('newstargetdesc', 'block_newsslider') . " 5?",
+                "_blank",
+                $yes = '_blank',
+ 	            $no = '_self' 
             )
         );
 
@@ -275,7 +330,7 @@ if ($hassiteconfig) {
             new admin_setting_configtext(
                 'block_newsslider/newstitle06',
                 get_string('newstitle', 'block_newsslider') . " 6",
-                get_string('newstitledesc', 'block_newsslider') . " 6",
+                get_string('newstitledesc', 'block_newsslider') . " 6.",
                 '',
             )
         );
@@ -284,7 +339,7 @@ if ($hassiteconfig) {
             new admin_setting_configtextarea(
                 'block_newsslider/newscontent06',
                 get_string('newscontent', 'block_newsslider') . " 6",
-                get_string('newscontentdesc', 'block_newsslider') . " 6",
+                get_string('newscontentdesc', 'block_newsslider') . " 6.",
                 '',
             )
         );
@@ -293,8 +348,19 @@ if ($hassiteconfig) {
             new admin_setting_configtext(
                 'block_newsslider/newsurl06',
                 get_string('newsurl', 'block_newsslider') . " 6",
-                get_string('newsurldesc', 'block_newsslider') . " 6",
+                get_string('newsurldesc', 'block_newsslider') . " 6.",
                 'https://www.ymag.fr/',
+            )
+        );
+
+        $settings->add(
+            new admin_setting_configcheckbox(
+                'block_newsslider/newstarget06',
+                get_string('newstarget', 'block_newsslider') . " 6",
+                get_string('newstargetdesc', 'block_newsslider') . " 6?",
+                "_blank",
+                $yes = '_blank',
+ 	            $no = '_self' 
             )
         );
 
