@@ -111,8 +111,8 @@ if ($hassiteconfig) {
         $settings->add(
             new admin_setting_configcheckbox(
                 'block_newsslider/newstarget01',
-                get_string('newstarget', 'block_newsslider') . " 1",
-                get_string('newstargetdesc', 'block_newsslider') . " 1?",
+                get_string('newstargetdesc', 'block_newsslider') . " 1",
+                "",
                 "_blank",
                 $yes = '_blank',
  	            $no = '_self' 
@@ -160,8 +160,8 @@ if ($hassiteconfig) {
         $settings->add(
             new admin_setting_configcheckbox(
                 'block_newsslider/newstarget02',
-                get_string('newstarget', 'block_newsslider') . " 2",
-                get_string('newstargetdesc', 'block_newsslider') . " 2?",
+                get_string('newstargetdesc', 'block_newsslider') . " 2",
+                "",
                 "_blank",
                 $yes = '_blank',
  	            $no = '_self' 
@@ -209,8 +209,8 @@ if ($hassiteconfig) {
         $settings->add(
             new admin_setting_configcheckbox(
                 'block_newsslider/newstarget03',
-                get_string('newstarget', 'block_newsslider') . " 3",
-                get_string('newstargetdesc', 'block_newsslider') . " 3?",
+                get_string('newstargetdesc', 'block_newsslider') . " 3",
+                "",
                 "_blank",
                 $yes = '_blank',
  	            $no = '_self' 
@@ -258,8 +258,8 @@ if ($hassiteconfig) {
         $settings->add(
             new admin_setting_configcheckbox(
                 'block_newsslider/newstarget04',
-                get_string('newstarget', 'block_newsslider') . " 4",
-                get_string('newstargetdesc', 'block_newsslider') . " 4?",
+                get_string('newstargetdesc', 'block_newsslider') . " 4",
+                "",
                 "_blank",
                 $yes = '_blank',
  	            $no = '_self' 
@@ -307,8 +307,8 @@ if ($hassiteconfig) {
         $settings->add(
             new admin_setting_configcheckbox(
                 'block_newsslider/newstarget05',
-                get_string('newstarget', 'block_newsslider') . " 5",
-                get_string('newstargetdesc', 'block_newsslider') . " 5?",
+                get_string('newstargetdesc', 'block_newsslider') . " 5",
+                "",
                 "_blank",
                 $yes = '_blank',
  	            $no = '_self' 
@@ -356,8 +356,8 @@ if ($hassiteconfig) {
         $settings->add(
             new admin_setting_configcheckbox(
                 'block_newsslider/newstarget06',
-                get_string('newstarget', 'block_newsslider') . " 6",
-                get_string('newstargetdesc', 'block_newsslider') . " 6?",
+                get_string('newstargetdesc', 'block_newsslider') . " 6",
+                "",
                 "_blank",
                 $yes = '_blank',
  	            $no = '_self' 
