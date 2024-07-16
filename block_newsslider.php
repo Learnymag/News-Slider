@@ -69,9 +69,11 @@ class block_newsslider extends block_base {
      */
     public function get_content() {
 
+        $context = context_system::instance();
+
         $this->content = new stdClass();
         $this->content->text = '<div id="newsLabelContent"><span class="actualitesIcon">'
-            . format_text(get_config('block_newsslider', 'newslabel'), FORMAT_HTML, ['noclean' => false, 'filter' => true])
+            . format_text(get_config('block_newsslider', 'newslabel'), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context])
             . '</span>';
         $this->content->footer = '';
 
@@ -83,8 +85,8 @@ class block_newsslider extends block_base {
             if (get_config('block_newsslider', 'newstitle0'.$i) !== "") {
                 $news = new \block_newsslider\output\list_news_item(
                     $i === 1 ? 'glideAppear' : 'glideDisappear',
-                    format_text(get_config('block_newsslider', 'newstitle0'.$i), FORMAT_HTML, ['noclean' => false, 'filter' => true]),
-                    format_text(get_config('block_newsslider', 'newscontent0'.$i), FORMAT_HTML, ['noclean' => false, 'filter' => true]),
+                    format_text(get_config('block_newsslider', 'newstitle0'.$i), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context]),
+                    format_text(get_config('block_newsslider', 'newscontent0'.$i), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context]),
                     get_config('block_newsslider', 'newsurl0'.$i),
                     get_config('block_newsslider', 'newstarget0'.$i),
                 );

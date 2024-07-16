@@ -87,6 +87,7 @@ if ($hassiteconfig) {
                 get_string('newstitle', 'block_newsslider') . " 1" . get_string('mandatoryfields', 'block_newsslider'),
                 get_string('newstitledesc', 'block_newsslider') . " 1.",
                 get_string('newstitledefault', 'block_newsslider'),
+                PARAM_RAW
             )
         );
 
@@ -96,6 +97,7 @@ if ($hassiteconfig) {
                 get_string('newscontent', 'block_newsslider') . " 1" . get_string('mandatoryfields', 'block_newsslider'),
                 get_string('newscontentdesc', 'block_newsslider') . " 1.",
                 get_string('newscontentdefault', 'block_newsslider'),
+                PARAM_RAW
             )
         );
 
@@ -136,6 +138,7 @@ if ($hassiteconfig) {
                 get_string('newstitle', 'block_newsslider') . " 2",
                 get_string('newstitledesc', 'block_newsslider') . " 2.",
                 '',
+                PARAM_RAW
             )
         );
 
@@ -145,6 +148,7 @@ if ($hassiteconfig) {
                 get_string('newscontent', 'block_newsslider') . " 2",
                 get_string('newscontentdesc', 'block_newsslider') . " 2.",
                 '',
+                PARAM_RAW
             )
         );
 
@@ -153,7 +157,7 @@ if ($hassiteconfig) {
                 'block_newsslider/newsurl02',
                 get_string('newsurl', 'block_newsslider') . " 2",
                 get_string('newsurldesc', 'block_newsslider') . " 2.",
-                'https://www.ymag.fr/',
+                get_string('newsurldefault', 'block_newsslider'),
             )
         );
 
@@ -185,6 +189,7 @@ if ($hassiteconfig) {
                 get_string('newstitle', 'block_newsslider') . " 3",
                 get_string('newstitledesc', 'block_newsslider') . " 3.",
                 '',
+                PARAM_RAW
             )
         );
 
@@ -194,6 +199,7 @@ if ($hassiteconfig) {
                 get_string('newscontent', 'block_newsslider') . " 3",
                 get_string('newscontentdesc', 'block_newsslider') . " 3.",
                 '',
+                PARAM_RAW
             )
         );
 
@@ -202,7 +208,7 @@ if ($hassiteconfig) {
                 'block_newsslider/newsurl03',
                 get_string('newsurl', 'block_newsslider') . " 3",
                 get_string('newsurldesc', 'block_newsslider') . " 3.",
-                'https://www.ymag.fr/',
+                get_string('newsurldefault', 'block_newsslider'),
             )
         );
 
@@ -234,6 +240,7 @@ if ($hassiteconfig) {
                 get_string('newstitle', 'block_newsslider') . " 4",
                 get_string('newstitledesc', 'block_newsslider') . " 4.",
                 '',
+                PARAM_RAW
             )
         );
 
@@ -243,6 +250,7 @@ if ($hassiteconfig) {
                 get_string('newscontent', 'block_newsslider') . " 4",
                 get_string('newscontentdesc', 'block_newsslider') . " 4.",
                 '',
+                PARAM_RAW
             )
         );
 
@@ -251,7 +259,7 @@ if ($hassiteconfig) {
                 'block_newsslider/newsurl04',
                 get_string('newsurl', 'block_newsslider') . " 4",
                 get_string('newsurldesc', 'block_newsslider') . " 4.",
-                'https://www.ymag.fr/',
+                get_string('newsurldefault', 'block_newsslider'),
             )
         );
 
@@ -283,6 +291,7 @@ if ($hassiteconfig) {
                 get_string('newstitle', 'block_newsslider') . " 5",
                 get_string('newstitledesc', 'block_newsslider') . " 5.",
                 '',
+                PARAM_RAW
             )
         );
 
@@ -292,6 +301,7 @@ if ($hassiteconfig) {
                 get_string('newscontent', 'block_newsslider') . " 5",
                 get_string('newscontentdesc', 'block_newsslider') . " 5.",
                 '',
+                PARAM_RAW
             )
         );
 
@@ -300,7 +310,7 @@ if ($hassiteconfig) {
                 'block_newsslider/newsurl05',
                 get_string('newsurl', 'block_newsslider') . " 5",
                 get_string('newsurldesc', 'block_newsslider') . " 5.",
-                'https://www.ymag.fr/',
+                get_string('newsurldefault', 'block_newsslider'),
             )
         );
 
@@ -332,6 +342,7 @@ if ($hassiteconfig) {
                 get_string('newstitle', 'block_newsslider') . " 6",
                 get_string('newstitledesc', 'block_newsslider') . " 6.",
                 '',
+                PARAM_RAW
             )
         );
 
@@ -341,6 +352,7 @@ if ($hassiteconfig) {
                 get_string('newscontent', 'block_newsslider') . " 6",
                 get_string('newscontentdesc', 'block_newsslider') . " 6.",
                 '',
+                PARAM_RAW
             )
         );
 
@@ -349,7 +361,7 @@ if ($hassiteconfig) {
                 'block_newsslider/newsurl06',
                 get_string('newsurl', 'block_newsslider') . " 6",
                 get_string('newsurldesc', 'block_newsslider') . " 6.",
-                'https://www.ymag.fr/',
+                get_string('newsurldefault', 'block_newsslider'),
             )
         );
 
