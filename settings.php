@@ -115,7 +115,7 @@ if ($hassiteconfig) {
                 'block_newsslider/newstarget01',
                 get_string('newstargetdesc', 'block_newsslider') . " 1",
                 "",
-                "_blank",
+                "_self",
                 $yes = '_blank',
  	            $no = '_self' 
             )
@@ -166,7 +166,7 @@ if ($hassiteconfig) {
                 'block_newsslider/newstarget02',
                 get_string('newstargetdesc', 'block_newsslider') . " 2",
                 "",
-                "_blank",
+                "_self",
                 $yes = '_blank',
  	            $no = '_self' 
             )
@@ -217,7 +217,7 @@ if ($hassiteconfig) {
                 'block_newsslider/newstarget03',
                 get_string('newstargetdesc', 'block_newsslider') . " 3",
                 "",
-                "_blank",
+                "_self",
                 $yes = '_blank',
  	            $no = '_self' 
             )
@@ -268,7 +268,7 @@ if ($hassiteconfig) {
                 'block_newsslider/newstarget04',
                 get_string('newstargetdesc', 'block_newsslider') . " 4",
                 "",
-                "_blank",
+                "_self",
                 $yes = '_blank',
  	            $no = '_self' 
             )
@@ -319,7 +319,7 @@ if ($hassiteconfig) {
                 'block_newsslider/newstarget05',
                 get_string('newstargetdesc', 'block_newsslider') . " 5",
                 "",
-                "_blank",
+                "_self",
                 $yes = '_blank',
  	            $no = '_self' 
             )
@@ -370,7 +370,7 @@ if ($hassiteconfig) {
                 'block_newsslider/newstarget06',
                 get_string('newstargetdesc', 'block_newsslider') . " 6",
                 "",
-                "_blank",
+                "_self",
                 $yes = '_blank',
  	            $no = '_self' 
             )
