@@ -26,6 +26,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$string['pluginname'] = 'News Slider';
 $string['greetings'] = 'Bienvenue dans l\'éditeur de News Slider!';
 $string['mandatoryfields'] = '<span class="mandatoryfields">*</span>';
 $string['mandatoryfieldsdesc'] = '<span class="mandatoryfields">* : Champs obligatoires.</span>';
@@ -49,4 +50,6 @@ $string['newstitledefault'] = 'Exemple de titre';
 $string['newsurl'] = 'Lien de l\'actualité';
 $string['newsurldesc'] = 'URL de l\'actualité n°';
 $string['newsurldefault'] = 'https://www.ymag.fr';
-$string['pluginname'] = 'News Slider';
+$string['myaddinstance'] = 'Permettre d\'ajouter un bloc News Slider dans la page Tableau de bord';
+$string['addinstance'] = 'Permettre d\'ajouter un bloc News Slider';
+$string['privacy:metadata'] = 'Le plugin News Slider plugin ne conserve aucune donnée personnelle d\'aucun utilisateur potentiel.';
