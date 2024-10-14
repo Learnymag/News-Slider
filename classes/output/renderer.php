@@ -34,14 +34,37 @@ use renderable;
  * This class extends the plugin_renderer_base class and is used for rendering templates.
  */
 class renderer extends plugin_renderer_base {
+
+    /**
+     * Renders the label of the block.
+     *
+     * @param mixed $label The string needed to be rendered.
+     * @return string The rendered template.
+     */
+    public function render_news_label(news_label $label) {
+        $data = $label->export_for_template($this);
+        return parent::render_from_template('block_newsslider/news_label', $data);
+    }
+
     /**
      * Renders a specific news item.
      *
      * @param mixed $linewsitem The item to be rendered.
      * @return string The rendered template.
      */
-    public function render_list_news_item($linewsitem) {
+    public function render_list_news_item(list_news_item $linewsitem) {
         $data = $linewsitem->export_for_template($this);
+        return parent::render_from_template('block_newsslider/list_news_item', $data);
+    }
+
+    /**
+     * Renders a specific news item.
+     *
+     * @param mixed $arrnews The array of news.
+     * @return string The rendered template.
+     */
+    public function render_list_news(list_news $arrnews) {
+        $data = $arrnews->export_for_template($this);
         return parent::render_from_template('block_newsslider/list_news_item', $data);
     }
 }

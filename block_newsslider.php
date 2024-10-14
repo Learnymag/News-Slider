@@ -71,13 +71,15 @@ class block_newsslider extends block_base {
 
         $context = context_system::instance();
 
-        $this->content = new stdClass();
-        $this->content->text = '<div id="newsLabelContent"><span class="actualitesIcon">'
-            . format_text(get_config('block_newsslider', 'newslabel'), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context])
-            . '</span>';
-        $this->content->footer = '';
-
         $renderer = $this->page->get_renderer('block_newsslider');
+
+        $this->content = new stdClass();
+        
+        $label = new \block_newsslider\output\news_label(
+            format_text(get_config('block_newsslider', 'newslabel'), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context])
+        );
+
+        $this->content->text .= $renderer->render($label);
 
         $newsitems = [];
 
@@ -94,11 +96,11 @@ class block_newsslider extends block_base {
             }
         }
 
-        $this->content->text .= '<div id="newsList"><ul id="actualitesList">';
-        foreach ($newsitems as $newsitem) {
-            $this->content->text .= $renderer->render($newsitem);
-        }
-        $this->content->text .= '</ul></div></div><span id="dotContainer"></span>';
+        $listnews = new \block_newsslider\output\list_news($newsitems);
+
+        $this->content->text .= $renderer->render($listnews);
+
+        $this->content->footer = ''; 
 
         return $this->content;
     }

@@ -424,12 +424,8 @@ section[data-block="newsslider"] {
     }
 }
 
-.form-item.row {
-    margin: 5px !important;
-}
-
-.form-control[name^="s_block_newsslider_newstitle"], 
-.form-control[name^="s_block_newsslider_newscontent"], 
-.form-control[name^="s_block_newsslider_newsurl"] {
-    width: 100% !important;
+[id^="admin-newstitle"] {
+    & [id^="id_s_block_newsslider_newstitle"], [id^="id_s_block_newsslider_newscontent"], [id^="id_s_block_newsslider_newsurl"] {
+        width: 100% !important;
+    }
 }

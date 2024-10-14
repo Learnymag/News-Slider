@@ -272,12 +272,6 @@ section[data-block=newsslider] .card-body .card-text #dotContainer .dots.sml {
   margin-top: 10px !important;
 }
 
-.form-item.row {
-  margin: 5px !important;
-}
-
-.form-control[name^=s_block_newsslider_newstitle],
-.form-control[name^=s_block_newsslider_newscontent],
-.form-control[name^=s_block_newsslider_newsurl] {
+[id^=admin-newstitle] [id^=id_s_block_newsslider_newstitle], [id^=admin-newstitle] [id^=id_s_block_newsslider_newscontent], [id^=admin-newstitle] [id^=id_s_block_newsslider_newsurl] {
   width: 100% !important;
 }/*# sourceMappingURL=styles.css.map */
