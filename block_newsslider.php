@@ -107,7 +107,7 @@ class block_newsslider extends block_base {
 
     /**
      * Specify what js must be loaded and pass values to it.
-     *
+     * PR754160552RV - 14600102
      * @param none
      * @return void
      */
@@ -126,6 +126,8 @@ class block_newsslider extends block_base {
         ];
         // Put the second parameter to "null" if you don't have values to send.
         $this->page->requires->js_init_call('M.block_newsslider.init', $datasttngs, false, $jsmodule);
+
+        $this->$PAGE->requires->js_call_amd('block_newsslider/helloworld','init',["ABITBOL", "Georges"]);
     }
 
     /**

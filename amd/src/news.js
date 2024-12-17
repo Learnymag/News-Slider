@@ -6,13 +6,13 @@ M.block_newsslider = {
     }
 }
 
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function () {
 
     // Récupération du nombre d'actualités renseignées
-    const nbNews = $(`#actualitesList li`).length;
+    const nbNews = document.querySelector(`#actualitesList li`).length;
 
     // Affichage de ce nombre
-    console.log(nbNews);
+    //console.log(nbNews);
 
     // Initialisation variables
     // Numéro de l'actualité active initialement
@@ -34,10 +34,10 @@ $(document).ready(function () {
         }            
     }
 
-    $("#dotContainer").html(dots);
+    document.getElementById("dotContainer").innerHTML = dots;
 
-    $('#dotContainer .dots.green, '
-        +'#dotContainer .dots.green:hover').css({'background-color' : globalNewsSettngsDatas[0]});
+    document.querySelector('#dotContainer .dots.green, '
+        +'#dotContainer .dots.green:hover').style.backgroundColor = globalNewsSettngsDatas[0];
 
     // Initialisation de notre booléen permettant de voir si l'utilisateur a cliqué ou non sur nos petit points de navigation
     let dotClicked = false;
@@ -55,29 +55,37 @@ $(document).ready(function () {
             if (activeNews < nbNews) {
 
                 // S'il y a déjà eu une boucle, on retire la classe permettant l'animation de disparition de notre texte (catégorie + titre)
-                if ($(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).hasClass(`glideDisappear`)) { $(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).removeClass(`glideDisappear`); }
+                if (document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.contains(`glideDisappear`)) { document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.remove(`glideDisappear`); }
                 // On ajoute notre classe pour animer l'apparition de notre texte
-                $(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).addClass(`glideAppear`);
+                document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.add(`glideAppear`);
 
                 // On modifie l'état de notre point liée a l'activité qui vient de finir de s'afficher afin de le passer en activité "sélectionnée/affichée"
-                if($(`#dotContainer span.dots:nth-child(${activeNews})`).hasClass('grey') && $(`#dotContainer span.dots:nth-child(${activeNews})`).hasClass('sml')) {
+                if(document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.contains('grey') && document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.contains('sml')) {
 
-                    $(`#dotContainer span.dots:nth-child(${activeNews})`).removeClass('grey').removeClass('sml')
+                    document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('grey');
+                    document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('sml');
                 }
-                $(`#dotContainer span.dots:nth-child(${activeNews})`).addClass('green').addClass('lrg').css({'background-color' : globalNewsSettngsDatas[0]});
+                document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.add('green');
+                document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('lrg');
+                document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).style.backgroundColor = globalNewsSettngsDatas[0];
 
                 // On défini qu'une fois 11 secondes écoulées on lancera ce qui suit
                 setTimeout(() => {
 
                     // On enlève notre classe liée à l'animation d'apprition du texte & on ajoute celle liée à la disparition afin de lancer par la même l'animation souhaitée
-                    $(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).removeClass(`glideAppear`).addClass(`glideDisappear`);
+                    document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.remove(`glideAppear`);
+                    document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.add(`glideDisappear`);
 
                     // On modifie l'état de notre point liée a l'activité qui vient de finir de s'afficher afin de le passer en activité "autre que sélectionnée"
-                    if($(`#dotContainer span.dots:nth-child(${activeNews})`).hasClass('green') && $(`#dotContainer span.dots:nth-child(${activeNews})`).hasClass('lrg')) {
+                    if(document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.contains('green') && document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.contains('lrg')) {
 
-                        $(`#dotContainer span.dots:nth-child(${activeNews})`).removeClass('green').removeClass('lrg')
+                        document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('green');
+                        document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('lrg')
+                        
                     }    
-                    $(`#dotContainer span.dots:nth-child(${activeNews})`).addClass('grey').addClass('sml').css({'background-color' : '#a9a9a9'});
+                    document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.add('grey');
+                    document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.add('sml');
+                    document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).style.backgroundColor = '#a9a9a9';
                     
                     // Si l'utilisateur a cliqué
                     if(dotClicked === true){
@@ -110,30 +118,37 @@ $(document).ready(function () {
             } else if (activeNews === nbNews) {
 
                 // On vérifie de nouveau s'il y a eu déjà d'autre(s) boucle(s) auparavant pour enlever ce qui pourrait nuir à la bonne animation de notre élément texte
-                if ($(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).hasClass(`glideDisappear`)) { $(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).removeClass(`glideDisappear`); }
+                if (document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.contains(`glideDisappear`)) { document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.remove(`glideDisappear`); }
                 // On fait apparaitre notre texte
-                $(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).addClass(`glideAppear`);
+                document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.add(`glideAppear`);
 
                 // On passe notre point pour ajouter le feedback de positionnement de l'actu en activité "sélectionné/affichée"
-                if($(`#dotContainer span.dots:nth-child(${activeNews})`).hasClass('grey') && $(`#dotContainer span.dots:nth-child(${activeNews})`).hasClass('sml')) {
+                if(document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.contains('grey') && document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.contains('sml')) {
 
-                    $(`#dotContainer span.dots:nth-child(${activeNews})`).removeClass('grey').removeClass('sml')
+                    document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('grey');
+                    document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('sml');
                 }
-                $(`#dotContainer span.dots:nth-child(${activeNews})`).addClass('green').addClass('lrg').css({'background-color' : globalNewsSettngsDatas[0]});
+                document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.add('green')
+                document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.add('lrg')
+                document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).style.backgroundColor = globalNewsSettngsDatas[0];
 
 
                 // On défini qu'une fois 11 secondes écoulées on lancera ce qui suit
                 setTimeout(() => {
 
                     // On enlève notre classe liée à l'animation d'apprition du texte & on ajoute celle liée à la disparition afin de lancer par la même l'animation souhaitée
-                    $(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).removeClass(`glideAppear`).addClass(`glideDisappear`);
+                    document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.remove(`glideAppear`);
+                    document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.add(`glideDisappear`);
 
                     // On modifie l'état de notre point liée a l'activité qui vient de finir de s'afficher afin de le passer en activité "autre que sélectionnée"
-                    if($(`#dotContainer span.dots:nth-child(${activeNews})`).hasClass('green') && $(`#dotContainer span.dots:nth-child(${activeNews})`).hasClass('lrg')) {
+                    if(document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.contains('green') && document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.contains('lrg')) {
 
-                        $(`#dotContainer span.dots:nth-child(${activeNews})`).removeClass('green').removeClass('lrg')
+                        document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('green');
+                        document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('lrg');
                     }    
-                    $(`#dotContainer span.dots:nth-child(${activeNews})`).addClass('grey').addClass('sml').css({'background-color' : '#a9a9a9'});
+                    document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.add('grey');
+                    document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.add('sml');
+                    document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).style.backgroundColor = '#a9a9a9';
 
                     // Si l'utilisateur a cliqué
                     if(dotClicked === true){
@@ -172,54 +187,63 @@ $(document).ready(function () {
     })();
 
     // On va gérer ici le clic sur nos petits points
-    $('#dotContainer span.dots').click(function(e) {
+    document.querySelector('#dotContainer span.dots').addEventListener('click', function(e) {
         // On empêchece clic influencé une autre anim
         e.preventDefault();
 
         // On enlève notre classe liée à l'animation d'apparition du texte & on ajoute celle liée à la disparition afin de lancer par la même l'animation souhaitée
-        $(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).removeClass(`glideAppear`).addClass(`glideDisappear`);
+        document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.remove(`glideAppear`);
+        document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.add(`glideDisappear`);
 
         // Etant donné que nous n'avons pas encore modifié "activeNews", il s'agit donc de l'actualité actuellement affichée.
         // On va donc passer le point représentant sa position parmi nos autres actualité comme une actualité autre que celle sélectionnée 
-        if($(`#dotContainer span.dots:nth-child(${activeNews})`).hasClass('green') && $(`#dotContainer span.dots:nth-child(${activeNews})`).hasClass('lrg')) {
+        if(document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.contains('green') && document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.contains('lrg')) {
 
-            $(`#dotContainer span.dots:nth-child(${activeNews})`).removeClass('green').removeClass('lrg')
+            document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('green');
+            document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('lrg');
         }
-        $(`#dotContainer span.dots:nth-child(${activeNews})`).addClass('grey').addClass('sml').css({'background-color' : '#a9a9a9'});
+        document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.add('grey')
+        document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.add('sml')
+        document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).style.backgroundColor = '#a9a9a9';
 
         // On change enfin "activeNews" en reprenant la donnée affiliée à notre point : le numéro de l'actualité que nous voulons voir
-        activeNews = parseInt($(this).attr("data-news"));
+        activeNews = parseInt(this.getAttribute("data-news"));
         
         // S'il y a déjà eu une boucle, on retire la classe permettant l'animation de disparition de notre texte (catégorie + titre)
-        if ($(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).hasClass(`glideDisappear`)) { $(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).removeClass(`glideDisappear`); }
+        if (document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.contains(`glideDisappear`)) { document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.remove(`glideDisappear`); }
         // On ajoute notre classe pour animer l'apparition de notre texte
-        $(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).addClass(`glideAppear`);
+        document.querySelector(`#actualitesList li.actualitesListItem:nth-child(${activeNews})`).classList.add(`glideAppear`);
 
         // On passe notre point comme représentant notre activité actuellement affichée
-        if($(`#dotContainer span.dots:nth-child(${activeNews})`).hasClass('grey') && $(`#dotContainer span.dots:nth-child(${activeNews})`).hasClass('sml')) {
+        if(document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.contains('grey') && document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.contains('sml')) {
 
-            $(`#dotContainer span.dots:nth-child(${activeNews})`).removeClass('grey').removeClass('sml')
+            document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('grey');
+            document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.remove('sml');
         }
-        $(`#dotContainer span.dots:nth-child(${activeNews})`).addClass('green').addClass('lrg').css({'background-color' : globalNewsSettngsDatas[0]});
+        document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.add('green');
+        document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).classList.add('lrg');
+        document.querySelector(`#dotContainer span.dots:nth-child(${activeNews})`).style.backgroundColor = globalNewsSettngsDatas[0];
 
         // On change notre booléen pour savoir si oui ou non l'utilisateur a utilisé un de nos points
         dotClicked = true;            
-    });
+    }, false);
 
     // Modification de la couleur principale à partir de celle receuillie des paramètres.
-    $('#newsLabelContent .actualitesIcon, '
+    document.querySelector('#newsLabelContent .actualitesIcon, '
         +'section[data-block=lynews] .card-body .card-text #dotContainer .dots.green, '
-        +'section[data-block=lynews] .card-body .card-text #dotContainer .dots.green:hover').css({'background-color' : globalNewsSettngsDatas[0]});
+        +'section[data-block=lynews] .card-body .card-text #dotContainer .dots.green:hover').style.backgroundColor = globalNewsSettngsDatas[0];
         
-    $('#actualitesList .actualitesListItem:hover, '
-        +'#actualitesList .actualitesListItem .actualitesCategories').css({'color' : globalNewsSettngsDatas[0]});
+    document.querySelector('#actualitesList .actualitesListItem:hover, '
+        +'#actualitesList .actualitesListItem .actualitesCategories').style.color = globalNewsSettngsDatas[0];
 
-    $('#actualitesList .actualitesListItem').hover(function () {
+    document.querySelector('#actualitesList .actualitesListItem').addEventListener('hover', function() {
             // over
-            $(this).css({'text-decoration' : 'underline','color' : globalNewsSettngsDatas[0]});
+            this.style.textDecoration = 'underline';
+            this.style.color = globalNewsSettngsDatas[0];
         }, function () {
             // out
-            $(this).css({'text-decoration' : 'none','color' : 'initial'});
+            this.style.textDecoration = 'none';
+            this.style.color = 'initial';
         }
     );
     
