@@ -107,12 +107,13 @@ class block_newsslider extends block_base {
 
     /**
      * Specify what js must be loaded and pass values to it.
-     *
+     * PR754160552RV - 14600102
      * @param none
      * @return void
      */
     public function get_required_javascript() {
 
+        global $PAGE;
         // Values to pass to our js.
         $datasttngs = [
             'clr' => get_config('block_newsslider', 'colour'),
@@ -121,11 +122,16 @@ class block_newsslider extends block_base {
 
         $jsmodule = [
             'name'     => 'block_newsslider',
-            'fullpath' => '/blocks/newsslider/amd/news.js',
+            'fullpath' => '/blocks/newsslider/amd/src/news.js',
             'requires' => [],
         ];
         // Put the second parameter to "null" if you don't have values to send.
         $this->page->requires->js_init_call('M.block_newsslider.init', $datasttngs, false, $jsmodule);
+        /*
+        $PAGE->requires->js_call_amd('block_newsslider/news','init',[[
+            'clr' => get_config('block_newsslider', 'colour'),
+            'cycle' => get_config('block_newsslider', 'newsclyde'),
+        ]]);*/
     }
 
     /**
