@@ -27,4 +27,4 @@
 require_once(__DIR__ . '/../../config.php');
 require_login();
 
-$PAGE->requires->js('/blocks/newsslider/amd/settings.js', true);
+//$PAGE->requires->js('/blocks/newsslider/amd/settings.js', true);
