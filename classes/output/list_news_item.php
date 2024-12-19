@@ -56,6 +56,11 @@ class list_news_item implements renderable, templatable {
      * @var string $target Value used to open in an new tab or not.
      */
     public $target;
+    /**
+     * @var string $color Title color.
+     */
+    public $color;
+
 
     /**
      * Constructor for the list_news_item class.
@@ -65,12 +70,13 @@ class list_news_item implements renderable, templatable {
      * @param string $content The content of the news.
      * @param string $link The URL of the news.
      */
-    public function __construct($class, $title, $content, $link, $target) {
+    public function __construct($class, $title, $content, $link, $target, $color) {
         $this->class = $class;
         $this->title = $title;
         $this->content = $content;
         $this->link = $link;
         $this->target = $target;
+        $this->color = $color;
     }
 
     /**
@@ -86,6 +92,7 @@ class list_news_item implements renderable, templatable {
         $data->content = $this->content;
         $data->link = $this->link;
         $data->target = $this->target;
+        $data->color = $this->color;
         return $data;
     }
 }

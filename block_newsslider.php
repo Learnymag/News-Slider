@@ -91,6 +91,7 @@ class block_newsslider extends block_base {
                     format_text(get_config('block_newsslider', 'newscontent0'.$i), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context]),
                     get_config('block_newsslider', 'newsurl0'.$i) === "" ? '#' : get_config('block_newsslider', 'newsurl0'.$i),
                     get_config('block_newsslider', 'newstarget0'.$i),
+                    get_config('block_newsslider', 'colour')
                 );
                 array_push($newsitems, $news);
             }
