@@ -32,10 +32,13 @@ if ($hassiteconfig) {
 
     if ($ADMIN->fulltree) {
 
-        global $CFG;
-        require_once($CFG->dirroot . '/config.php');
-        require_admin();
-        require($CFG->dirroot . '/blocks/newsslider/loadjs.php');
+        // global $CFG;
+        // require_once($CFG->dirroot . '/config.php');
+        // require_admin();
+        // require($CFG->dirroot . '/blocks/newsslider/loadjs.php');
+
+        global $PAGE;
+        $PAGE->requires->js_call_amd('block_newsslider/settings_amd','init', []);
 
         $settings->add(
             new admin_setting_description(

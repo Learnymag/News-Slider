@@ -79,6 +79,7 @@ class block_newsslider extends block_base {
             format_text(get_config('block_newsslider', 'newslabel'), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context])
         );
 
+        $this->content->text = '';
         $this->content->text .= $renderer->render($label);
 
         $newsitems = [];
@@ -121,18 +122,18 @@ class block_newsslider extends block_base {
             'cycle' => get_config('block_newsslider', 'newsclyde'),
         ];
 
-        $jsmodule = [
-            'name'     => 'block_newsslider',
-            'fullpath' => '/blocks/newsslider/amd/src/news.js',
-            'requires' => [],
-        ];
-        // Put the second parameter to "null" if you don't have values to send.
-        $this->page->requires->js_init_call('M.block_newsslider.init', $datasttngs, false, $jsmodule);
-        /*
-        $PAGE->requires->js_call_amd('block_newsslider/news','init',[[
+        // $jsmodule = [
+        //     'name'     => 'block_newsslider',
+        //     'fullpath' => '/blocks/newsslider/amd/src/news.js',
+        //     'requires' => [],
+        // ];
+        // // Put the second parameter to "null" if you don't have values to send.
+        // $this->page->requires->js_init_call('M.block_newsslider.init', $datasttngs, false, $jsmodule);
+
+        $PAGE->requires->js_call_amd('block_newsslider/news_amd','init', [
             'clr' => get_config('block_newsslider', 'colour'),
             'cycle' => get_config('block_newsslider', 'newsclyde'),
-        ]]);*/
+        ]);
     }
 
     /**
