@@ -21,6 +21,7 @@
  * @author      BORNET Stéphen.
  * @copyright   2023 YMAG info@ymag.fr https://www.ymag.fr/
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @thanks      Volodymyr DOVHAN for his help & his patience.
  */
 class block_newsslider extends block_base {
 
@@ -74,34 +75,32 @@ class block_newsslider extends block_base {
         $renderer = $this->page->get_renderer('block_newsslider');
 
         $this->content = new stdClass();
-        
-        $label = new \block_newsslider\output\news_label(
-            format_text(get_config('block_newsslider', 'newslabel'), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context])
-        );
 
-        $this->content->text .= $renderer->render($label);
+        $label = format_text(get_config('block_newsslider', 'newslabel'), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context]);
+
+        $this->content->text = '';
 
         $newsitems = [];
 
         for ($i = 1; $i <= 6; $i++) {
             if (get_config('block_newsslider', 'newstitle0'.$i) !== "") {
-                $news = new \block_newsslider\output\list_news_item(
-                    $i === 1 ? 'glideAppear' : 'glideDisappear',
-                    format_text(get_config('block_newsslider', 'newstitle0'.$i), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context]),
-                    format_text(get_config('block_newsslider', 'newscontent0'.$i), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context]),
-                    get_config('block_newsslider', 'newsurl0'.$i) === "" ? '#' : get_config('block_newsslider', 'newsurl0'.$i),
-                    get_config('block_newsslider', 'newstarget0'.$i),
-                    get_config('block_newsslider', 'colour')
-                );
+                $news = [
+                    'class' => $i === 1 ? 'glideAppear' : 'glideDisappear',
+                    'title' => format_text(get_config('block_newsslider', 'newstitle0'.$i), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context]),
+                    'content' => format_text(get_config('block_newsslider', 'newscontent0'.$i), FORMAT_HTML, ['noclean' => false, 'filter' => true, 'context' => $context]),
+                    'link' => get_config('block_newsslider', 'newsurl0'.$i) === "" ? '#' : get_config('block_newsslider', 'newsurl0'.$i),
+                    'target' => get_config('block_newsslider', 'newstarget0'.$i),
+                    'color' => get_config('block_newsslider', 'colour'),
+                ];
                 array_push($newsitems, $news);
             }
         }
 
-        $listnews = new \block_newsslider\output\list_news($newsitems);
+        $newscontent = new \block_newsslider\output\news($label, $newsitems);
 
-        $this->content->text .= $renderer->render($listnews);
+        $this->content->text .= $renderer->render($newscontent);
 
-        $this->content->footer = ''; 
+        $this->content->footer = '';
 
         return $this->content;
     }
@@ -114,25 +113,17 @@ class block_newsslider extends block_base {
      */
     public function get_required_javascript() {
 
-        global $PAGE;
+        $this->page;
         // Values to pass to our js.
         $datasttngs = [
             'clr' => get_config('block_newsslider', 'colour'),
             'cycle' => get_config('block_newsslider', 'newsclyde'),
         ];
 
-        $jsmodule = [
-            'name'     => 'block_newsslider',
-            'fullpath' => '/blocks/newsslider/amd/src/news.js',
-            'requires' => [],
-        ];
-        // Put the second parameter to "null" if you don't have values to send.
-        $this->page->requires->js_init_call('M.block_newsslider.init', $datasttngs, false, $jsmodule);
-        /*
-        $PAGE->requires->js_call_amd('block_newsslider/news','init',[[
+        $this->page->requires->js_call_amd('block_newsslider/news_amd', 'init', [
             'clr' => get_config('block_newsslider', 'colour'),
             'cycle' => get_config('block_newsslider', 'newsclyde'),
-        ]]);*/
+        ]);
     }
 
     /**

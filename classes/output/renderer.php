@@ -58,7 +58,7 @@ class renderer extends plugin_renderer_base {
     }
 
     /**
-     * Renders a specific news item.
+     * Renders an array of news.
      *
      * @param mixed $arrnews The array of news.
      * @return string The rendered template.
@@ -66,5 +66,16 @@ class renderer extends plugin_renderer_base {
     public function render_list_news(list_news $arrnews) {
         $data = $arrnews->export_for_template($this);
         return parent::render_from_template('block_newsslider/list_news_item', $data);
+    }
+
+    /**
+     * Renders an array of news.
+     *
+     * @param mixed $arrnews The array of news.
+     * @return string The rendered template.
+     */
+    public function render_news(news $news) {
+        $data = $news->export_for_template($this);
+        return parent::render_from_template('block_newsslider/news', $data);
     }
 }

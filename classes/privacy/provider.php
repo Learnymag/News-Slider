@@ -16,6 +16,7 @@
 
 /**
  * Privacy Subsystem implementation for block_newsslider.
+ * This plugin does not store any personal user data.
  *
  * @package     block_newsslider
  * @category    string
@@ -26,7 +27,6 @@
 
 namespace block_newsslider\privacy;
 
-// This plugin does not store any personal user data.
 class provider implements \core_privacy\local\metadata\null_provider {
     /**
      * Get the language string identifier with the component's language

@@ -22,6 +22,7 @@
  * @author      BORNET Stéphen.
  * @copyright   2023 YMAG info@ymag.fr https://www.ymag.fr/
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @thanks      Volodymyr DOVHAN for his help & his patience.
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -32,10 +33,8 @@ if ($hassiteconfig) {
 
     if ($ADMIN->fulltree) {
 
-        global $CFG;
-        require_once($CFG->dirroot . '/config.php');
-        require_admin();
-        require($CFG->dirroot . '/blocks/newsslider/loadjs.php');
+        global $PAGE;
+        $PAGE->requires->js_call_amd('block_newsslider/settings_amd', 'init', []);
 
         $settings->add(
             new admin_setting_description(
@@ -109,7 +108,7 @@ if ($hassiteconfig) {
                 get_string('newsurldefault', 'block_newsslider'),
             )
         );
-        
+
         $settings->add(
             new admin_setting_configcheckbox(
                 'block_newsslider/newstarget01',
@@ -117,7 +116,7 @@ if ($hassiteconfig) {
                 "",
                 "_self",
                 $yes = '_blank',
- 	            $no = '_self' 
+                $no = '_self'
             )
         );
 
@@ -168,7 +167,7 @@ if ($hassiteconfig) {
                 "",
                 "_self",
                 $yes = '_blank',
- 	            $no = '_self' 
+                $no = '_self'
             )
         );
 
@@ -219,7 +218,7 @@ if ($hassiteconfig) {
                 "",
                 "_self",
                 $yes = '_blank',
- 	            $no = '_self' 
+                $no = '_self'
             )
         );
 
@@ -270,7 +269,7 @@ if ($hassiteconfig) {
                 "",
                 "_self",
                 $yes = '_blank',
- 	            $no = '_self' 
+                $no = '_self'
             )
         );
 
@@ -321,7 +320,7 @@ if ($hassiteconfig) {
                 "",
                 "_self",
                 $yes = '_blank',
- 	            $no = '_self' 
+                $no = '_self'
             )
         );
 
@@ -372,7 +371,7 @@ if ($hassiteconfig) {
                 "",
                 "_self",
                 $yes = '_blank',
- 	            $no = '_self' 
+                $no = '_self'
             )
         );
 

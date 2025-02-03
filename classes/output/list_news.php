@@ -33,7 +33,7 @@ use stdClass;
 /**
  * Class list_news
  *
- * This class implements the renderable and templatable interfaces and is used for handling data for news.
+ * This class implements the renderable and templatable interfaces and is used for handling list of list_news_item.
  */
 class list_news implements renderable, templatable {
     /**
@@ -54,7 +54,7 @@ class list_news implements renderable, templatable {
      * Exports data for use in a template.
      *
      * @param renderer_base $output The renderer base.
-     * @return stdClass The data to be used in the template.
+     * @return array The data to be used in the template.
      */
     public function export_for_template(renderer_base $output) {
         return ['newsitems' => $this->newsitems];

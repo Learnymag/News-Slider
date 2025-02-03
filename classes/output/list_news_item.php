@@ -33,7 +33,7 @@ use stdClass;
 /**
  * Class list_news_item
  *
- * This class implements the renderable and templatable interfaces and is used for handling data for news.
+ * This class implements the renderable and templatable interfaces and is used for handling each news.
  */
 class list_news_item implements renderable, templatable {
     /**

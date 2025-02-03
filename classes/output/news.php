@@ -31,35 +31,42 @@ use renderer_base;
 use stdClass;
 
 /**
- * Class news_label
+ * Class news
  *
- * This class implements the renderable and templatable interfaces and is used for handling the block's label.
+ * This class implements the renderable and templatable interfaces and is used for handling all data for news.
  */
-class news_label implements renderable, templatable {
-
+class news implements renderable, templatable {
     /**
-     * @var string $content The content of the news.
+     * @var news_label The news label.
      */
-    public $content;
+    private $news_label;
 
     /**
-     * Constructor for the news_label class.
+     * @var list_news The list of news items.
+     */
+    private $list_news;
+
+    /**
+     * Constructor for the news class.
      *
-     * @param string $content The content of the news.
+     * @param news_label $news_label The news label.
+     * @param list_news $list_news The list of news items.
      */
-    public function __construct($content) {
-        $this->content = $content;
+    public function __construct(string $news_label, array $list_news) {
+        $this->news_label = $news_label;
+        $this->list_news = $list_news;
     }
 
     /**
      * Exports data for use in a template.
      *
      * @param renderer_base $output The renderer base.
-     * @return stdClass The data to be used in the template.
+     * @return array The data to be used in the template.
      */
     public function export_for_template(renderer_base $output) {
-        $data = new stdClass();
-        $data->content = $this->content;
-        return $data;
+        return [
+            'content' => $this->news_label,
+            'newsitems' => $this->list_news,
+        ];
     }
 }
