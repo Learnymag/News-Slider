@@ -61,7 +61,7 @@ class news implements renderable, templatable {
      * Exports data for use in a template.
      *
      * @param renderer_base $output The renderer base.
-     * @return array The data to be used in the template.
+     * @return array The datas to be used in the two templates : list_news & news_label.
      */
     public function export_for_template(renderer_base $output) {
         return [

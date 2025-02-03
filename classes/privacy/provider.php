@@ -27,6 +27,9 @@
 
 namespace block_newsslider\privacy;
 
+/**
+ * This class implements the provider in order to inform the user that no datas will be stored.
+ */
 class provider implements \core_privacy\local\metadata\null_provider {
     /**
      * Get the language string identifier with the component's language

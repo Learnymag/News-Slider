@@ -83,7 +83,7 @@ class list_news_item implements renderable, templatable {
      * Exports data for use in a template.
      *
      * @param renderer_base $output The renderer base.
-     * @return stdClass The data to be used in the template.
+     * @return stdClass The datas used in each news.
      */
     public function export_for_template(renderer_base $output) {
         $data = new stdClass();

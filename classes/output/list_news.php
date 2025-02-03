@@ -54,7 +54,7 @@ class list_news implements renderable, templatable {
      * Exports data for use in a template.
      *
      * @param renderer_base $output The renderer base.
-     * @return array The data to be used in the template.
+     * @return array Array of datas used in item (class, title, content, link, target, color).
      */
     public function export_for_template(renderer_base $output) {
         return ['newsitems' => $this->newsitems];
